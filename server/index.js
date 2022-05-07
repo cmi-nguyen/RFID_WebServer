@@ -62,7 +62,7 @@ app.post("/addprl", (req,res)=>{
     const product_line_id = req.body.product_line_id; 
     db.connect(function(err){
         if(err) throw err;
-        
+        /////
     })
 })
 //To Do:  orther post method 
