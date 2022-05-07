@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Paytone+One&display=swap');
+.main{
+  display: flex;
+  width: 100%;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #2c3e50;
+}
+.main-header{
+  display: block;
+  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Paytone One', sans-serif;
+  color: #34495e;
+  padding-left: 10px;
+}
+.main-menu{
+  display: flex;
+  align-items: center;
+}
+ul{
+  display: flex;
+  list-style-type: none;
+  
+}
+li{
+  display: flex;
+  margin-right: 10px;
+}
+a{
+  color: #34495e;
+  text-decoration: none;
+  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Paytone One', sans-serif;
+}
+a:hover{
+  transition: all 0.3s ease-in-out;
+  color: #3498db;
+}
+.main-container{
+  display: inline;
+  justify-content: center;
+  justify-items: center;
+}
+p{
+  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Paytone One', sans-serif;
+}
+.second-nav{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.danger-button{
+  background-color: #c0392b; 
+  border: none;
+  color: #ecf0f1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.danger-button:hover{
+  background-color: #e74c3c;
+}
