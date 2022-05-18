@@ -1,5 +1,5 @@
 import React from 'react'
-import BillList from '../component/billList'
+import BillList from '../component/BillList'
 
 
 function Bill() {
@@ -7,7 +7,6 @@ function Bill() {
     <div className='main-container'>
       <nav className='second-nav'>
         <p>My bills</p>
-        
       </nav>
       <BillList/>
     </div>
