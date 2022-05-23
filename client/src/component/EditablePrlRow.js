@@ -9,7 +9,7 @@ const EditablePrlRow = ({
       <td>
         <input
           type="text"
-          required="required"
+          required
           placeholder="Enter a name..."
           name="product_instance_id"
           value={editFormData.fullName}
@@ -19,7 +19,7 @@ const EditablePrlRow = ({
       <td>
         <input
           type="text"
-          required="required"
+          required
           placeholder="Enter an address..."
           name="address"
           value={editFormData.address}
@@ -29,7 +29,7 @@ const EditablePrlRow = ({
       <td>
         <input
           type="text"
-          required="required"
+          required
           placeholder="Enter a phone number..."
           name="phoneNumber"
           value={editFormData.phoneNumber}
@@ -39,7 +39,7 @@ const EditablePrlRow = ({
       <td>
         <input
           type="email"
-          required="required"
+          required
           placeholder="Enter an email..."
           name="email"
           value={editFormData.email}

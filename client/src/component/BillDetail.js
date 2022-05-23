@@ -6,48 +6,45 @@ export default function BillDetail() {
     const [productInstances, setProductInstance]= useState([]);
     const [billDetail,setBillDetail]=useState([]);
     const [productLines, setProductLine]= useState([]);
-    console.log(productLines)
+    
+    
     const id= useParams();
     useEffect(() => {
-      //Runs only on the first render
-     axios.get(`http://localhost:3001/billdetails/${id.billid}`)
-      .then(function (response) {
-        setBillDetail(response.data)
-      })
-      .catch(function (error) {
-      console.log(error);
-      });
-
-  }, []);
+      const getData = async () => {
+        let res = await axios.get(`http://localhost:3001/billdetails/${id.billid}`)
+        setBillDetail(res.data)
+      };
+    
+      getData(); // run it, run it
+    
+    }, []);
+   
+     
+   
   
   useEffect(() => {
-  for (let index = 0; index < billDetail.length; index++) {
-    axios.get(`http://localhost:3001/billitem/${billDetail[index].product_instance_id}`)
-    .then(function (response) {
-      setProductInstance(productInstances.concat(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    
-  }
+    const getData = async ()=>{
+      for (let index = 0; index < billDetail.length; index++) {
+        let res = await axios.get(`http://localhost:3001/billitem/${billDetail[index].product_instance_id}`) 
+          setProductInstance(productInstances=> productInstances.concat(res.data)); 
+      }
+    };
+    getData()
 }, [billDetail]);
+
+console.log(productInstances)
 useEffect(() => {
-  for (let i = 0; i < productInstances.length; i++) {
-    axios.get(`http://localhost:3001/billitems/${productInstances[i].product_line_id}`)
-    .then(function (response) {
-      setProductLine(productLines=> productLines.concat(response.data))
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    
+  let i = productInstances.length;
+  const getData = async ()=>{
+      let res = await axios.get(`http://localhost:3001/billitems/${productInstances[i-1].product_line_id}`)
+        setProductLine(productLines=> productLines.concat(res.data))
   }
+  getData();
+  
   }, [productInstances]);
   let temp=0;
   for (let index = 0; index < productLines.length; index++) {
-    temp+=productLines[index].price
-    
+    temp+=productLines[index].price 
   }
   
   
@@ -71,12 +68,14 @@ useEffect(() => {
     });
     */
    return (
-     <div className='main-container'>
-      <p>Bill Detail</p>
-      <p>Bill ID:  {id.billid}    Total: {temp}</p>
-      <div className='list-container'>
+     <div >
+       <div className='second-nav'>
+        <p>Bill Detail:</p>
         
-  
+        <p>Bill ID:  {id.billid}    Total: {temp}</p>
+       </div>
+      
+      <div className='list-container'>
         <table>
           <thead>
             <tr>

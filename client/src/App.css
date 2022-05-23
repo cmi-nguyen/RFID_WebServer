@@ -49,8 +49,8 @@ p{
 .second-nav{
   margin-top: 5px;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
 }
 .danger-button{
   background-color: #c0392b; 
@@ -62,6 +62,7 @@ p{
   font-size: 16px;
 }
 .edit-btn{
+  display: none;
   background-color: #16a085; 
   border: none;
   color: #ecf0f1;
@@ -77,15 +78,17 @@ p{
   background-color: #e74c3c;
 }
 .list-container{
-  display: inline;
+  display: flex;
   justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 table {
-  width: 100%;
+  width: 75%;
   border-width: 1px;
   border-style: solid;
   border-color: #2c3e50;
-
+  
   color: #34495e;
 }
 th{

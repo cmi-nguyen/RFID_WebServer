@@ -52,7 +52,8 @@ function ProductIntanceList() {
     
 
   return (
-        <div className='list-container'>
+    <div>
+    <div className='list-container'>
             <table>
               <thead>
                 <tr>
@@ -74,6 +75,8 @@ function ProductIntanceList() {
                 ))}
               </tbody>
             </table>
+            </div>
+            <div className='list-container'>
             <p>Add Product Instance</p>
             
             <form onSubmit={addPri}>
@@ -91,7 +94,13 @@ function ProductIntanceList() {
                 />
                 <button >Add</button>
             </form>
-        </div>
+            </div>
+            
+            
+            
+        
+    </div>
+        
   )
 }
 

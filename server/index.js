@@ -147,7 +147,7 @@ app.post("/addprl", (req, res) => {
   app.delete("/deletepri/:id", (req, res) => {
     const id = req.params.id;
     db.query("SET foreign_key_checks = 0;")
-    db.query("DELETE FROM productinstancerfid WHERE id = ?", id, (err, result) => {
+    db.query("DELETE FROM productinstancerfid WHERE product_instance_id = ?", id, (err, result) => {
       if (err) {
         console.log(err);
       } else {

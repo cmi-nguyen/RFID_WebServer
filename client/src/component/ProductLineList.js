@@ -52,7 +52,8 @@ function ProductLineList() {
     }
 
   return (
-        <div className='list-container'>
+    <div>
+ <div className='list-container'>
             <table>
               <thead>
                 <tr>
@@ -76,7 +77,9 @@ function ProductLineList() {
                 ))}
               </tbody>
             </table>
-            <p>Add Productline</p>
+        </div>
+        <div className='list-container'>
+        <p>Add Productline</p>
             <form onSubmit={addPrl}>
               <input type="text"
                 name="product_line_id"
@@ -99,6 +102,8 @@ function ProductLineList() {
                 <button>Add</button>
             </form>
         </div>
+    </div>
+       
   )
 }
 

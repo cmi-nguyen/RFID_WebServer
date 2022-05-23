@@ -47,7 +47,8 @@ function TagList() {
     window.location.reload();
   }
   return (
-        <div className='list-container'>
+    <div>
+ <div className='list-container'>
             <table>
               <thead>
                 <tr>
@@ -69,7 +70,10 @@ function TagList() {
                 ))}
               </tbody>
             </table>
-            <p>Add Tag</p>
+                
+        </div>
+           <div className='list-container'>
+           <p>Add Tag</p>
             
             <form onSubmit={addTag}>
               <input type="text"
@@ -87,7 +91,10 @@ function TagList() {
                 <button>Add</button>
             </form>
             
-        </div>
+           </div>
+    </div>
+       
+        
   )
 }
 
