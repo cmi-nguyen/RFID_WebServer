@@ -158,7 +158,7 @@ app.post("/addprl", (req, res) => {
 
   app.get("/getbill/:data", (req ,res )=>{
     const data = req.params.data;
-    db.query("SELECT * FROM `bill` where date> ?",data,(err, result,)=>{
+    db.query("SELECT * FROM `bill` where date>= ?",data,(err, result,)=>{
         if (err) throw err;
         res.send(result);
     });
